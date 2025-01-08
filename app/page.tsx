@@ -42,8 +42,8 @@ export default function Home() {
 	const handleRestart = () => {
 		setTasks([]);
 		setStarted(false);
-		audio.pause();
-		audio.currentTime = 0;
+		audio?.pause();
+		audio ? (audio.currentTime = 0) : null;
 	};
 
 	const allTasksFinished =
@@ -62,7 +62,6 @@ export default function Home() {
 			tasks={tasks}
 			timeLimit={timeLimit}
 			onTaskUpdate={handleTaskUpdate}
-			musicGenre={musicGenre}
 		/>
 	);
 }
